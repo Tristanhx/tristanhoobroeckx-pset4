@@ -47,15 +47,15 @@ public class DataBaseHelper extends SQLiteOpenHelper{
         values.put(KEY_ITEM, item.getItem());
         values.put(DONE, item.getDone());
         db.insert(TABLE, null, values);
-        Log.d("tag!", values.get(KEY_ITEM).toString());
-        Log.d("tag!", values.get(DONE).toString());
+        Log.d("check!", values.get(KEY_ITEM).toString());
+        Log.d("check!", values.get(DONE).toString());
         db.close();
     }
 
     public ArrayList<ITEM> Read(){
         SQLiteDatabase db = getReadableDatabase();
         ArrayList<ITEM> items = new ArrayList<>();
-        String query = "SELECT " + KEY_ID + ", " + KEY_ITEM + ", " + " FROM " + TABLE;
+        String query = "SELECT " + KEY_ID + ", " + KEY_ITEM + ", " + DONE + " FROM " + TABLE;
         Cursor cursor =  db.rawQuery(query, null);
 
         if (cursor.moveToFirst()){
