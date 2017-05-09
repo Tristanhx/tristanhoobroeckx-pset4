@@ -22,7 +22,7 @@ public class CustomList extends ArrayAdapter<String> {
 
     public CustomList(Activity context, ArrayList<String> strings, ArrayList<ITEM> itemList){
         super(context, R.layout.list_single, strings);
-        Log.d("Check!", "ik ben in CustomList");
+        Log.d("check!", "ik ben in CustomList");
         this.context = context;
         this.strings = strings;
         this.itemList = itemList;

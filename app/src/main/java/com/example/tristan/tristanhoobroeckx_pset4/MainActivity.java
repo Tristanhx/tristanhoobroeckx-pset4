@@ -30,8 +30,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Create new database
         context = this;
-        helper = new DataBaseHelper(this);
+        helper = new DataBaseHelper(context);
 
         itemList = helper.Read();
         for (ITEM items : itemList){
