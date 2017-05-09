@@ -42,7 +42,7 @@ public class DataBaseHelper extends SQLiteOpenHelper{
 
     public void Create(ITEM item){
         SQLiteDatabase db = getWritableDatabase();
-        onUpgrade(db, 1, 1);
+        //onUpgrade(db, 1, 1);
         ContentValues values = new ContentValues();
         values.put(KEY_ITEM, item.getItem());
         values.put(DONE, item.getDone());
@@ -65,6 +65,9 @@ public class DataBaseHelper extends SQLiteOpenHelper{
                 int id = cursor.getInt(cursor.getColumnIndex(KEY_ID));
 
                 ITEM item = new ITEM(name, done, id);
+
+                items.add(item);
+
             }while(cursor.moveToNext());
         }
         cursor.close();
